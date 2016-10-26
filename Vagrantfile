@@ -9,7 +9,7 @@ SCRIPT
 
 Vagrant.configure(2) do |config|
   config.vm.box = "azureservicefabric/dev.tp6"
-  config.vm.box_url = "https://aka.ms/sflinuxvagrantonebox"
+  config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp6.box"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -30,9 +30,5 @@ Vagrant.configure(2) do |config|
   # Copy Java libraries to shared host folder to enable local build
   config.vm.provision "shell", inline:
     $script
-
-  # Set up the onebox cluster on the VM
-  config.vm.provision "shell", inline:
-    "sudo bash /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh"
 
 end
