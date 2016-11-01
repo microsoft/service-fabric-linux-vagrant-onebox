@@ -31,4 +31,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline:
     $script
 
+  # Set up the onebox cluster on the VM  
+    config.vm.provision "shell", inline:  
+      "sudo bash /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh"  
+
 end
