@@ -8,8 +8,8 @@ cp -var /opt/microsoft/sdk/servicefabric/java/packages/lib/ /vagrant/tmp/
 SCRIPT
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "azureservicefabric/dev.tp6"
-  config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp7.box"
+  config.vm.box = "azureservicefabric/dev.tp8"
+  config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp8.box"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
