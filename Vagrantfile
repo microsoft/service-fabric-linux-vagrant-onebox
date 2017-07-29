@@ -1,12 +1,6 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$script = <<SCRIPT
-rm -rf /vagrant/tmp/lib
-mkdir -p /vagrant/tmp/lib
-cp -var /opt/microsoft/sdk/servicefabric/java/packages/lib/ /vagrant/tmp/
-SCRIPT
-
 Vagrant.configure(2) do |config|
   config.vm.box = "azureservicefabric/onebox.tp9"
   config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp9.box"
@@ -28,11 +22,13 @@ Vagrant.configure(2) do |config|
   end
 
   # Copy Java libraries to shared host folder to enable local build
-  config.vm.provision "shell", inline:
-    $script
+  #config.vm.provision "shell", inline:
+  #  $script
 
   # Set up the onebox cluster on the VM  
     config.vm.provision "shell", inline:  
       "sudo bash /opt/microsoft/sdk/servicefabric/common/clustersetup/devclustersetup.sh"  
-
+   
+  config.vm.define :ServiceFabric do |t|
+  end
 end
