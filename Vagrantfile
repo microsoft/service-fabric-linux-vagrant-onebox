@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "azureservicefabric/onebox.tp9"
-  config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp9.box"
+  config.vm.box = "azureservicefabric/onebox.tp10"
+  config.vm.box_url = "http://download.microsoft.com/download/5/4/3/543A221C-DBB6-472D-97EA-5A62F0165748/azureservicefabric.tp10.box"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
